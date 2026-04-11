@@ -1,7 +1,7 @@
-export function Login() {
+export function Feed() {
   return (
     <div>
-      Login
+      Feed
     </div>
   )
 }
