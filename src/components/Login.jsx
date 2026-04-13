@@ -8,6 +8,7 @@ import { addUser } from "../utils/userSlice"
 export function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -18,10 +19,10 @@ export function Login() {
         email, password
       },
       {withCredentials: true}) // to save token in the cookies
-      console.log('hii', res.data)
       dispatch(addUser(res.data))
       return navigate("/")
     } catch(err) {
+      setError(err.response.data)
       console.error(err)
     }
   }
@@ -38,6 +39,7 @@ export function Login() {
             <legend className="fieldset-legend">Password</legend>
             <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} className="input" />
           </fieldset>
+          <p className="text-red-500">{error}</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary" onClick={handleLogin}>Login</button>
           </div>
