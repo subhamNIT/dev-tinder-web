@@ -5,6 +5,7 @@ import { Connections } from "./components/Connections"
 import { Feed } from "./components/Feed"
 import { Login } from "./components/Login"
 import { Profile } from "./components/Profile"
+import { Requests } from "./components/Requests"
 import { store } from "./utils/store"
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/connections" element={<Connections />}></Route>
-            <Route path="/requests" element={<Profile />}></Route>
+            <Route path="/requests" element={<Requests />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

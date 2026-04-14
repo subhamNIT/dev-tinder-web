@@ -26,10 +26,18 @@ export function Feed() {
     fetchFeed()
   }, [feed, dispatch])
 
+  if(!feed) return
+  if(feed.length === 0) {
+    return (
+      <h1 className="flex justify-center my-10">No users available to connect</h1>
+    )
+  }
   return (
     feed && (
-      <div className="flex justify-center my-10">
-        <UserCard user = {feed[0]}/>
+      <div className="flex flex-col gap-4 justify-center items-center my-10">
+        {feed.map((f) => {
+          return  <UserCard user = {f} hideButtons={false}/>
+        })}
       </div>
     )
   )

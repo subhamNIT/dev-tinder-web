@@ -46,7 +46,8 @@ export function Navbar() {
                   <span className="badge">New</span>
                 </Link>
               </li>
-              <Link to="/connections">Connections</Link>
+              <li><Link to="/connections">Connections</Link></li>
+              <li><Link to="/requests">Connection Requests</Link></li>
               <li><a onClick={handleLogout}>Logout</a></li>
             </ul>
           </div>

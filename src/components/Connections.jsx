@@ -20,7 +20,7 @@ export function Connections() {
 
   useEffect(() => {
     fetchConnections()
-  })
+  }, [])
   if(!connections) return
   if(connections.length === 0) {
     return (
@@ -31,9 +31,9 @@ export function Connections() {
     <div className="text-center my-10">
       <h1 className="font-bold text-white text-4xl">Connections</h1>
       {connections.map((connection) => {
-        const {firstName, lastName, age, photoUrl, gender, about} = connection
+        const {_id, firstName, lastName, age, photoUrl, gender, about} = connection
         return (
-          <div className="flex my-4 p-4 rounded bg-base-200 w-1/2 mx-auto">
+          <div key={_id} className="flex my-4 p-4 rounded bg-base-200 w-1/2 mx-auto">
             <div>
               <img alt="photo" className="w-20 h-20 rounded-full" src={photoUrl}/>
             </div>

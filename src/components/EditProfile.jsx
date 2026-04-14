@@ -77,7 +77,7 @@ export function EditProfile({user}) {
           </div>
         </div>
       </div>
-      <UserCard user = {{firstName, lastName, photoUrl, age, gender, about}}/>
+      <UserCard user = {{firstName, lastName, photoUrl, age, gender, about}} hideButtons={true}/>
       {showToast && <div className="toast toast-top toast-center">
         <div className="alert alert-success">
           <span>Profile Saved Successfully</span>
